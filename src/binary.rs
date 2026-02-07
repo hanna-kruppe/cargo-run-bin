@@ -102,9 +102,7 @@ pub fn binstall(binary_package: metadata::BinaryPackage, cache_path: path::PathB
         .arg("--no-confirm")
         .arg("--no-symlinks")
         .arg("--root")
-        .arg(&cache_path)
-        .arg("--install-path")
-        .arg(cache_path.join("bin"));
+        .arg(&cache_path);
 
     if let Some(bin) = &binary_package.bin_target {
         cmd_prefix.arg("--bin").arg(bin);
